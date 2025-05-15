@@ -19,8 +19,7 @@ const test = baseTest.extend<TestFixtures>({
       });
 
       await use(async (runnable) => {
-        const title = runnable.toString();
-        await test.step(title, async (step) => {
+        await test.step('span', async (step) => {
           const spanId = randomUUID();
           await step.attach('spanId', { body: spanId });
           spans.push({ spanId: spanId });
